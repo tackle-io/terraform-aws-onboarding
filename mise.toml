@@ -1,0 +1,30 @@
+[tools]
+terraform       = "1.14.6"
+tflint          = "0.61.0"
+trivy            = "0.69.3"
+terraform-docs  = "0.21.0"
+prek            = "0.3.5"
+
+[tasks.fmt]
+description = "Format all Terraform files"
+run         = "terraform fmt -recursive"
+
+[tasks.validate]
+description = "Initialise and validate the module"
+run         = "terraform init -backend=false && terraform validate"
+
+[tasks.lint]
+description = "Run tflint against the module"
+run         = "tflint --init && tflint -f compact"
+
+[tasks.docs]
+description = "Regenerate README inputs/outputs table"
+run         = "terraform-docs ."
+
+[tasks.hooks]
+description = "Install prek git hooks"
+run         = "prek install"
+
+[tasks.check]
+description = "Run all checks (fmt, validate, lint)"
+depends     = ["fmt", "validate", "lint"]
