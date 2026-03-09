@@ -24,7 +24,7 @@ resource "aws_cloudformation_stack" "tackle" {
     "CAPABILITY_AUTO_EXPAND"
   ]
 
-  tags = var.tags
+  tags = merge(var.tags, { "TerraformTemplateVersion" = var.template_version })
 
   # Allow up to 15 minutes for stack creation (Lambda registration + resource creation)
   timeouts {
