@@ -1,0 +1,46 @@
+name: Feature Request
+description: Suggest an improvement or new capability
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting an improvement. Please describe the use case
+        clearly so we can assess the request.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: |
+        What problem are you trying to solve? What can you not do today?
+      placeholder: "When I try to... I cannot..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: |
+        Describe the change you would like to see. Include a rough example
+        of what the new variable, output, or behaviour would look like.
+      render: hcl
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any workarounds you have tried or alternative approaches.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched existing issues and this is not a duplicate.
+          required: true
