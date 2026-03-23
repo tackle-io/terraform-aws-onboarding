@@ -102,19 +102,20 @@ stack was created. You can also verify in the AWS Console under CloudFormation >
 Stacks.
 
 <!-- BEGIN_TF_DOCS -->
+
 ## Requirements
 
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.14 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.0 |
+| Name                                                                     | Version |
+| ------------------------------------------------------------------------ | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | >= 1.14 |
+| <a name="requirement_aws"></a> [aws](#requirement_aws)                   | >= 6.0  |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.0 |
-| <a name="provider_terraform"></a> [terraform](#provider\_terraform) | n/a |
+| Name                                                               | Version |
+| ------------------------------------------------------------------ | ------- |
+| <a name="provider_aws"></a> [aws](#provider_aws)                   | >= 6.0  |
+| <a name="provider_terraform"></a> [terraform](#provider_terraform) | n/a     |
 
 ## Modules
 
@@ -122,28 +123,29 @@ No modules.
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [aws_cloudformation_stack.tackle](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudformation_stack) | resource |
-| [terraform_data.region_check](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
-| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
+| Name                                                                                                                                | Type        |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| [aws_cloudformation_stack.tackle](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudformation_stack) | resource    |
+| [terraform_data.region_check](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data)               | resource    |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region)                         | data source |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_external_id"></a> [external\_id](#input\_external\_id) | A hash of a Tackle-internal identifier unique to your company. Provided by Tackle. | `string` | n/a | yes |
-| <a name="input_registration_token"></a> [registration\_token](#input\_registration\_token) | The token used to complete the registration process. Provided by Tackle. | `string` | n/a | yes |
-| <a name="input_stack_name"></a> [stack\_name](#input\_stack\_name) | Name for the CloudFormation stack. | `string` | `"Tackle-Resources"` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | Additional tags to apply to the CloudFormation stack and its resources. | `map(string)` | `{}` | no |
-| <a name="input_template_version"></a> [template\_version](#input\_template\_version) | Bump this (or upgrade the module to a new release that bumps the default) to force a CloudFormation stack update. When changed, Terraform runs UpdateStack and CloudFormation re-fetches the template from the URL, so consumers can pick up the latest CFT without changing the template URL. Set to the module release version (e.g. "1.1") when cutting a new tag so that upgrading ref=v1.0.0 to ref=v1.1.0 triggers an update. | `string` | `"1.0"` | no |
+| Name                                                                                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                         | Type          | Default              | Required |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | -------------------- | :------: |
+| <a name="input_external_id"></a> [external\_id](#input_external_id)                      | A hash of a Tackle-internal identifier unique to your company. Provided by Tackle.                                                                                                                                                                                                                                                                                                                                                  | `string`      | n/a                  |   yes    |
+| <a name="input_registration_token"></a> [registration\_token](#input_registration_token) | The token used to complete the registration process. Provided by Tackle.                                                                                                                                                                                                                                                                                                                                                            | `string`      | n/a                  |   yes    |
+| <a name="input_stack_name"></a> [stack\_name](#input_stack_name)                         | Name for the CloudFormation stack.                                                                                                                                                                                                                                                                                                                                                                                                  | `string`      | `"Tackle-Resources"` |    no    |
+| <a name="input_tags"></a> [tags](#input_tags)                                            | Additional tags to apply to the CloudFormation stack and its resources.                                                                                                                                                                                                                                                                                                                                                             | `map(string)` | `{}`                 |    no    |
+| <a name="input_template_version"></a> [template\_version](#input_template_version)       | Bump this (or upgrade the module to a new release that bumps the default) to force a CloudFormation stack update. When changed, Terraform runs UpdateStack and CloudFormation re-fetches the template from the URL, so consumers can pick up the latest CFT without changing the template URL. Set to the module release version (e.g. "1.1") when cutting a new tag so that upgrading ref=v1.0.0 to ref=v1.1.0 triggers an update. | `string`      | `"1.0"`              |    no    |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_stack_id"></a> [stack\_id](#output\_stack\_id) | CloudFormation stack ID |
-| <a name="output_stack_outputs"></a> [stack\_outputs](#output\_stack\_outputs) | All outputs from the CloudFormation stack |
+| Name                                                                        | Description                               |
+| --------------------------------------------------------------------------- | ----------------------------------------- |
+| <a name="output_stack_id"></a> [stack\_id](#output_stack_id)                | CloudFormation stack ID                   |
+| <a name="output_stack_outputs"></a> [stack\_outputs](#output_stack_outputs) | All outputs from the CloudFormation stack |
+
 <!-- END_TF_DOCS -->
 
 ## Pinning a Version
@@ -243,7 +245,7 @@ curl https://mise.run | sh
 ### Setup
 
 ```bash
-# Install all pinned tools (terraform, tflint, trivy, terraform-docs, prek)
+# Install all pinned tools (terraform, tflint, terraform-docs, prek)
 mise install
 
 # Install git hooks (runs prek on each commit)

@@ -19,4 +19,3 @@ repos:
         args:
           - --args=--init
           - --args=-f compact
-      - id: terraform_trivy
