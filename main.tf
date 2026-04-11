@@ -1,5 +1,9 @@
 data "aws_region" "current" {}
 
+locals {
+  module_version = "1.1.0"
+}
+
 resource "terraform_data" "region_check" {
   lifecycle {
     precondition {

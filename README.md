@@ -145,6 +145,7 @@ No modules.
 | --------------------------------------------------------------------------- | ----------------------------------------- |
 | <a name="output_stack_id"></a> [stack\_id](#output_stack_id)                | CloudFormation stack ID                   |
 | <a name="output_stack_outputs"></a> [stack\_outputs](#output_stack_outputs) | All outputs from the CloudFormation stack |
+| <a name="output_module_version"></a> [module\_version](#output_module_version) | Version of the terraform-aws-onboarding module |
 
 <!-- END_TF_DOCS -->
 
@@ -154,7 +155,7 @@ Use a Git ref to pin to a specific release:
 
 ```hcl
 module "tackle_aws_onboarding" {
-  source = "github.com/tackle-io/terraform-aws-onboarding?ref=v1.0.0"
+  source = "github.com/tackle-io/terraform-aws-onboarding?ref=v1.1.0"
 
   external_id        = var.external_id
   registration_token = var.registration_token
